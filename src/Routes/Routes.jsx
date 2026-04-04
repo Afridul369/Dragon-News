@@ -27,4 +27,8 @@ export const router = createBrowserRouter([
     path: "/news",
     element: <div>Hello World of news</div>,
   },
+  {
+    path: "*",
+    element: <div>Error 404</div>,
+  },
 ]);
