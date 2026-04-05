@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const CategoryCard = ({ news }) => {
-     const [showFull, setShowFull] = useState(false);
+
   return (
     <div className="bg-base-100  rounded-lg  space-y-4 mb-5 px-4 pb-4">
       
@@ -41,18 +41,17 @@ const CategoryCard = ({ news }) => {
 
       {/* Details */}
       <p className="text-sm text-gray-500">
-      {showFull ? (
-        news.details
-      ) : (
+      { news.details.length > 200  ? (
         <>
           {news.details.slice(0, 150)}...
-          <span
-            onClick={() => setShowFull(true)}
+          <Link to={`/news-details/${news.id}`}
             className="text-orange-500 font-semibold cursor-pointer hover:underline ml-1"
           >
             Read More
-          </span>
+          </Link>
         </>
+      ) : (
+          news.details
       )}
     </p>
 
