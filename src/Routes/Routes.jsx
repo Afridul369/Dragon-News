@@ -8,6 +8,7 @@ import AuthLayout from "../Layout/AuthLayout";
 import NewsDetails from "../Layout/NewsDetails";
 import PrivateRouter from "../components/PrivateRouter";
 import Loading from "../components/Loading";
+import Error404 from "../components/Error404";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>Error 404</div>,
+    element: <Error404></Error404>
+  },
+  {
+    path: "/about",
+    element: <Error404></Error404>
+  },
+  {
+    path: "/career",
+    element: <Error404></Error404>
   },
 ]);
