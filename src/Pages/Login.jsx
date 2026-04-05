@@ -1,7 +1,7 @@
 import { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const {signIn,resetPass} = use(AuthContext)
@@ -38,7 +38,6 @@ const Login = () => {
     }
   return (
     <>
-    <Toaster />
     <div className="py-20">
       <div className="flex justify-center ">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-10 px-5">
